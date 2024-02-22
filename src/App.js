@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import "@adaptavant/fonts/inter/index.css";
+import "./tailwind.css";
 
-function App() {
+import { Sidenav } from "./layouts/Sidenav";
+import { Recents } from "./layouts/Recents";
+import { ChatContainer } from "./layouts/ChatContainer";
+
+import brand from "@adaptavant/brands/setmore";
+import { Root, Stack, Track } from "@adaptavant/core";
+import translations from "@adaptavant/translations/english";
+
+export default function AppWrapper() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <Root brand={brand} colorScheme="light" translations={translations}>
+      <Stack className="h-screen w-full">
+        <Track
+          className="w-full"
+          railEnd={<ChatContainer />}
+          railStart={<Sidenav />}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          <Recents />
+        </Track>
+      </Stack>
+    </Root>
   );
 }
-
-export default App;
