@@ -16,7 +16,10 @@ import {
 
 export function Sidenav() {
   return (
-    <Stack className="h-screen w-[57px] items-center border-r px-3 py-4">
+    <Stack
+      className=" h-full w-[57px] items-center border-r px-3 py-4"
+      as="aside"
+    >
       <NavigationIcon className="mb-6 cursor-pointer rounded-8px p-1 hover:bg-neutral-secondary-hover" />
       <Stack className="gap-1">
         <CalendarFoldIcon className="cursor-pointer rounded-8px p-1 hover:bg-neutral-secondary-hover" />
